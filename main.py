@@ -46,7 +46,7 @@ while True:
         break
     try:
         #перевірка наявності update delete у запиті
-        if 'UPDATE' or "DELETE" in user_query.upper():
+        if 'UPDATE' in user_query.upper() or "DELETE" in user_query.upper():
             if 'WHERE' not in user_query.upper():
                 raise ValueError ("Запит на оновлення або видалення повинен містити умову ")
         result = session.execute(text(user_query))
